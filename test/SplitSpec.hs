@@ -25,3 +25,10 @@ spec = do
       let seed = (10000, 10000)
       let txt = populateRandomString (seedSMGen' seed)
       txt `shouldBe` "QH"
+    it "splitSMGen" $ do
+      let seed = (10000, 10000)
+          (gen1, gen2) = splitSMGen $ seedSMGen' seed
+          gen1unseed = unseedSMGen gen1
+          gen2unseed = unseedSMGen gen2
+      gen1unseed `shouldBe` (30002, 10001)
+      gen2unseed `shouldBe` (6937453752537963546, 11190925850544447621)
