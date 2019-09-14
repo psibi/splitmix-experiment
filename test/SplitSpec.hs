@@ -10,4 +10,4 @@ spec = do
       let seed = (10000, 10000)
           gen = seedSMGen' seed
           outputSeed = unseedSMGen gen
-      seed `shouldBe` (10000, 10001)
+      seed `shouldBe` outputSeed
