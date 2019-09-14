@@ -50,3 +50,5 @@ tests:
     - hspec
     - hspec-discover
     - splitmix
+    - random
+    - text
