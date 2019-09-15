@@ -17,11 +17,10 @@ spec :: Spec
 spec = do
   describe "Splitmax test" $ do
     it "random string" $ do
-      let seed = (10000, 10001)
-      let txt = populateRandomString (seedSMGen' seed)
+      let txt = populateRandomString $ mkSMGen 10000
       txt `shouldBe` "QH"
     it "splitSMGen" $ do
-      let seed = (10000, 10000)
+      let seed = (10000, 10001)
           (gen1, gen2) = splitSMGen $ seedSMGen' seed
           gen1unseed = unseedSMGen gen1
           gen2unseed = unseedSMGen gen2
